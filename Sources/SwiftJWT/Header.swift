@@ -99,7 +99,18 @@ public struct Header: Codable {
         let data = try jsonEncoder.encode(self)
         return JWTEncoder.base64urlEncodedString(data: data)
     }
+ 
     enum CodingKeys: String, CodingKey {
         case x5tS256 = "x5t#S256"
+        case typ
+        case alg
+        case jku
+        case jwk
+        case kid
+        case x5u
+        case x5c
+        case x5t
+        case cty
+        case crit
     }
 }
